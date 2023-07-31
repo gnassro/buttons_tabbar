@@ -20,8 +20,8 @@ class ButtonsTabBar extends StatefulWidget implements PreferredSizeWidget {
     this.borderColor = Colors.black,
     this.unselectedBorderColor = Colors.black,
     this.physics = const BouncingScrollPhysics(),
-    this.contentPadding = const EdgeInsets.symmetric(horizontal: 4),
-    this.buttonMargin = const EdgeInsets.all(4),
+    this.contentPadding = const EdgeInsetsDirectional.symmetric(horizontal: 4),
+    this.buttonMargin = const EdgeInsetsDirectional.all(4),
     this.labelSpacing = 4.0,
     this.radius = 7.0,
     this.elevation = 0,
@@ -107,15 +107,15 @@ class ButtonsTabBar extends StatefulWidget implements PreferredSizeWidget {
   /// The default value is [BouncingScrollPhysics].
   final ScrollPhysics physics;
 
-  /// The [EdgeInsets] used for the [Padding] of the buttons' content.
+  /// The [EdgeInsetsGeometry] used for the [Padding] of the buttons' content.
   ///
-  /// The default value is [EdgeInsets.symmetric(horizontal: 4)].
-  final EdgeInsets contentPadding;
+  /// The default value is [EdgeInsetsDirectional.symmetric(horizontal: 4)].
+  final EdgeInsetsGeometry contentPadding;
 
-  /// The [EdgeInsets] used for the [Margin] of the buttons.
+  /// The [EdgeInsetsGeometry] used for the [Margin] of the buttons.
   ///
-  /// The default value is [EdgeInsets.all(4)].
-  final EdgeInsets buttonMargin;
+  /// The default value is [EdgeInsetsDirectional.all(4)].
+  final EdgeInsetsGeometry buttonMargin;
 
   /// The spacing between the [Icon] and the [Text]. If only one of those is provided,
   /// no spacing is applied.
