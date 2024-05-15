@@ -362,29 +362,32 @@ class _ButtonsTabBarState extends State<ButtonsTabBar>
             overlayColor: MaterialStateProperty.all(widget.splashColor)),
         child: Ink(
           decoration: boxDecoration,
-          child: Container(
-            padding: widget.contentPadding,
-            alignment: Alignment.center,
-            child: Row(
-              children: <Widget>[
-                tab.icon != null
-                    ? IconTheme.merge(
-                        data: IconThemeData(size: 24.0, color: foregroundColor),
-                        child: tab.icon!)
-                    : Container(),
-                SizedBox(
-                  width: tab.icon == null ||
-                          (tab.text == null && tab.child == null)
-                      ? 0
-                      : widget.labelSpacing,
-                ),
-                tab.text != null
-                    ? Text(
-                        tab.text!,
-                        style: textStyle,
-                      )
-                    : (tab.child ?? Container())
-              ],
+          child: DefaultTextStyle(
+            style: textStyle ?? TextStyle(),
+            child: Container(
+              padding: widget.contentPadding,
+              alignment: Alignment.center,
+              child: Row(
+                children: <Widget>[
+                  tab.icon != null
+                      ? IconTheme.merge(
+                          data: IconThemeData(size: 24.0, color: foregroundColor),
+                          child: tab.icon!)
+                      : Container(),
+                  SizedBox(
+                    width: tab.icon == null ||
+                            (tab.text == null && tab.child == null)
+                        ? 0
+                        : widget.labelSpacing,
+                  ),
+                  tab.text != null
+                      ? Text(
+                          tab.text!,
+                          style: textStyle,
+                        )
+                      : (tab.child ?? Container())
+                ],
+              ),
             ),
           ),
         ),
